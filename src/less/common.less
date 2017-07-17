@@ -1,0 +1,197 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html{
+  font-size: 62.5%; // 1rem=10px
+  color: #222;
+  font-family: "Microsoft YaHei";
+}
+
+body {
+  background-color: #FFFFFF;
+  font-size: 1.2rem; // 12px
+}
+
+a {
+  text-decoration: none;
+}
+
+::selection{
+  background-color: #3390FF;
+  text-shadow: none;
+}
+
+.detail-header{
+  font: 20px '微软雅黑';
+  line-height: 20px;
+  color: #fff;
+  display: inline-block;
+  margin-left: 40px;
+  padding-left: 40px;
+  border-left: 2px solid #fff;
+  margin-top: 30px;
+}
+
+ol,ul {
+  margin: 0;
+  padding: 0;
+}
+
+li{
+  list-style: none;
+}
+
+img{
+  border: none;
+}
+
+table {
+  border-collapse:collapse;
+}
+table.table>thead>tr>th {
+  text-align: center
+}
+// 在父元素中居住显示
+c-b{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.c-p{//鼠标手
+  cursor: pointer;
+}
+.f-l {
+  float: left
+}
+
+.f-r {
+  float: right
+}
+
+// 隐藏文字，便于网页阅读器 seo，a链接被图片替换的时候
+text-hide{
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  border: none;
+  background-color: transparent;
+}
+// before 防止margin叠加，顶部空白崩溃
+.clearfix:before,
+.clearfix:after {
+   content: "";
+   display: table;
+ }
+
+.clearfix:after {
+  clear: both;
+}
+
+.my-confirm {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 10px;
+  background: #fff;
+  font-size: 18px;
+  color: #29c686;
+  height: 40px;
+  line-height: 38px;
+  min-width: 100px;
+  border-radius: 19px;
+  border: 1px solid #29c686;
+  margin-left: 28px;
+  padding: 0 12px;
+}
+.my-confirm:hover {
+  background: linear-gradient(#62DF95, #30C988);
+  color: white;
+}
+.fade-enter-active {
+  transition: opacity .3s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+  opacity: 0
+}
+.extend-enter, .extend-leave-to /* .fade-leave-active in <2.1.8 */ {
+  width: 0;
+}
+.my-tab {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 10px;
+  background: #fff;
+  font-size: 0;
+  color: #4591EF;
+  height: 40px;
+  line-height: 38px;
+  min-width: 100px;
+  border-radius: 19px;
+  border: 1px solid #4591EF;
+  margin-left: 28px;
+  padding: 0 12px;
+  span{
+    vertical-align: middle;
+  }
+}
+::-webkit-scrollbar{
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-thumb{
+  border-radius: 1em;
+  background-color: rgba(50,50,50,.3);
+}
+::-webkit-scrollbar-track{
+  border-radius: 1em;
+  background-color: rgba(50,50,50,.1);
+}
+.read-more{
+  animation: change 1s  ease-in  infinite ;
+}
+@keyframes change {
+  0%{ text-shadow: 0 0 2px #4591EF}
+  50%{ text-shadow: 0 0 10px #4591EF}
+  100%{ text-shadow: 0 0 2px #4591EF}
+}
+
+
+#tip{
+  font-size: 20px;
+  text-align: center;
+}
+.blur-font{
+  line-height: 2.2;
+  letter-spacing: .12em;
+  -webkit-transform-origin: left top;
+  -ms-transform-origin: left top;
+  transform-origin: left top;
+  -webkit-transform: scale(0.94, 1);
+  -ms-transform: scale(0.94, 1);
+  transform: scale(0.94, 1);
+  text-align: center;
+  font-weight: 300;
+  opacity: 0;
+  -webkit-transform-origin: center center;
+  -ms-transform-origin: center center;
+  transform-origin: center center;
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
+  -webkit-transition: .8s ease;
+  transition: .8s ease .15s;
+  &.active{
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    -webkit-filter: blur(0);
+    filter: blur(0);
+  }
+}

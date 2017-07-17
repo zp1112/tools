@@ -1,0 +1,39 @@
+{
+  "env": {
+    "node": true,
+    "es6": true,
+    "browser": true
+  },
+  "parser": "babel-eslint",
+  "extends": "vue",
+  "plugins": [
+    "html"
+  ],
+  "rules": {
+    "comma-dangle": ["error", "never"],
+    "no-cond-assign": "error",
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "no-console": [
+      "error",
+      {
+        "allow": [
+          "warn",
+          "error",
+          "info",
+          "log"
+        ]
+      }
+    ]
+  }
+}
