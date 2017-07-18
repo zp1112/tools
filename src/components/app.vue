@@ -69,6 +69,7 @@
         font-size: 20px;
         color: #8c0505;
         border: 1px solid #29c686;
+        background: rgba(41, 198, 134, .2);
         &:hover{
           background: #29c686;
           color: #fff;

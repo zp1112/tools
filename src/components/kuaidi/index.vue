@@ -14,7 +14,8 @@
         <input placeholder="请输入物流号" v-model="mailNum"/>
         <el-button type="success" @click="checkInfo">查询物流</el-button>
       </div>
-      <div class="info">
+      <div class="info" v-show="message || infos.length">
+        <p v-if="message">{{message}}</p>
         <Timeline>
           <TimelineItem v-for="item in infos">
             <span slot="time">{{item.date}}</span>
@@ -35,8 +36,9 @@
     components: { Timeline, TimelineItem },
     data() {
       return {
+        message: '',
         infos: [],
-        name: '',
+        name: 'shentong',
         mailNum: '',
         classes: [
           { name: '申通', value: 'shentong' },
@@ -61,11 +63,17 @@
         const result = await
           axios.get(`/kuaidi?type=${this.name}&postid=${this.mailNum}`);
         const data = result.data.data;
-        for(const item of data) {
-          this.infos.push({
-            date: item.time,
-            desc: item.context
-          })
+        if (!data.length) {
+          this.infos = [];
+          this.message = result.data.message;
+        } else {
+          for(const item of data) {
+            this.infos.push({
+              date: item.time,
+              desc: item.context
+            })
+          }
+          this.message = '';
         }
       }
     }
@@ -126,6 +134,10 @@
         background: rgba(255,255,255,.6);
         padding: 20px 60px;
         border-radius: 10px;
+        p{
+          color: red;
+          font-size: 20px;
+        }
       }
     }
   }

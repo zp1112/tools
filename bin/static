@@ -2,7 +2,7 @@
 
 cd dist
 git init
-git remote add origin git@180.96.11.71:zhengping/njzy.git
+git remote add origin git@github.com:zp1112/tools.git
 git checkout -b $1
 git add .
 git commit -m "auto push"
